@@ -1,0 +1,201 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  position: sticky;
+  top: 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px 20px;
+}
+
+.displayText {
+  height: fit-content;
+}
+
+nav {
+  text-align: center;
+  height: fit-content;
+  padding: 10px;
+}
+#navbar a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 20px;
+}
+#navbar a:hover {
+  color: #555;
+  text-decoration: underline;
+}
+#burger {
+  display: none;
+  cursor: pointer;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  background-color: #555;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: fit-content;
+  border: 1px solid #555;
+}
+.button:hover {
+  background-color: white;
+  border: 1px solid #333;
+  color: #333;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 900px;
+}
+
+.section {
+  padding: 5%;
+  margin: 10px;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 85%;
+}
+
+.section1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.section1 img {
+  width: 50%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.section1Text {
+  display: flex;
+  flex-direction: column;
+}
+.section1 h2 {
+  font-size: 2.5rem;
+}
+
+.section2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.section2 img {
+  border-radius: 10px;
+  width: 100%;
+}
+
+.catGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+
+.catGrid img {
+  width: 100%;
+  height: auto;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+.easterEgg {
+  font-size: 50%;
+  display: none;
+}
+.easterEgg.visible {
+  display: flex;
+}
+
+@media screen and (max-width: 768px) /*Applies only when screen-width is less than 768px*/ {
+  #burger {
+    display: block;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  #burger:hover {
+    background-color: #555;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  #navbar {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    height: 100%;
+
+    top: 110px;
+    right: -200px;
+
+    background-color: #555;
+
+    transform: none;
+    transition: right 200ms linear;
+  }
+  #navbar a {
+    width: 100px;
+    margin: 0;
+    padding: 15px 20px;
+    text-align: end;
+  }
+  #navbar a:hover {
+    background-color: #ddd;
+  }
+  #navbar.active {
+    right: 0px;
+  }
+
+  .container {
+    width: 700px;
+  }
+
+  .section {
+    overflow: hidden;
+  }
+
+  .section1 {
+    flex-direction: column;
+  }
+  .section1 img {
+    width: 100%;
+  }
+  .button {
+    align-self: center;
+  }
+  .easterEgg {
+    font-size: 1dvw;
+  }
+}
